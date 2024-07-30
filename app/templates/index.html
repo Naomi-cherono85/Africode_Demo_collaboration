@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to Our Website</h1>
+    <div class="image-container">
+        <div class="image">
+            <img class="pics-1" src="{{ url_for('static', filename='images/home1.jpeg') }}" alt="Gym Image">
+            <br>
+            <br>
+            <img class="pics-3" src="{{ url_for('static', filename='images/fitness2.jpeg') }}" alt="Gym Image">
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Fitness Site{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <h1>FitLife<span class="pulse">Hub</span></h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Fitness <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('fitness', section='introduction') }}">Introduction to Fitness</a>
+                        <a href="{{ url_for('fitness', section='cardio') }}">Cardiovascular Exercises</a>
+                        <a href="{{ url_for('fitness', section='strength_training') }}">Strength Training</a>
+                        <a href="{{ url_for('fitness', section='flexibility') }}">Flexibility Exercises</a>
+                        <a href="{{ url_for('fitness', section='balance') }}">Balance Exercises</a>
+                        <a href="{{ url_for('fitness', section='core') }}">Core Exercises</a>
+                        <a href="{{ url_for('fitness', section='fitness-tips') }}">Fitness Tips</a>
+                        <a href="{{ url_for('fitness', section='expert-fitness-tips') }}">Expert Fitness Tips</a>
+                    </div>
+                </li>
+                <li><a class="nav-links" href="{{ url_for('nutrition') }}">Nutrition</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('about', section='our_mission') }}">Our Mission</a>
+                        <a href="{{ url_for('about', section='founders_story') }}">Founder's Story</a>
+                        <a href="{{ url_for('about', section='our_team') }}">Our Team</a>
+                        <a href="{{ url_for('about', section='our_achievements') }}">Our Achievements</a>
+                        <a href="{{ url_for('about', section='future_goals') }}">Future Goals</a>
+                    </div>
+                </li>
+                <li><a class="nav-links" href="{{ url_for('testimonials') }}">Testimonials</a></li>
+                <li><a class="nav-links" href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:info@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <p>&copy; 2024 Fitness Website All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        
+    </footer>
+</body>
+</html>
